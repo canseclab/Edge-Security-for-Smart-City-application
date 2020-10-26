@@ -1,11 +1,11 @@
 # NDN-Project
 
-## Edge side
+## Edge Server & User Side
 There are KGC, EC, and ED on the edge server, and file a.properties ,AES.java ,credentials.json , GUI.java at the user side.  
 Because we wanted to test easily, We did not separate the user from the edge.  
 Please refer to the folder "GUI" if you need to separate them.  
 
-### Before start
+### Before Start
 You should set some parameters as follow:  
 On the edge server:  
 1.ED_ccloud:  
@@ -21,7 +21,7 @@ On line 1617, this is the path that the user download a file.(Default is desktop
 OPTIONAL:  
 The default port of KGC is 5487, the EC is 5278, and the ED is 5457.  
 
-### How to start the edge server  
+### How to Start the Edge Server  
 1.Run the KGC_server  
 2.Run the EC_client  
 3.Run the ED_ccloud if you want to connect with NDN.  
@@ -30,7 +30,7 @@ If you want to test, remember to change the ED's IP in the GUI.
 But there are some differences between the file ED_ccloud and ED_client.  
 In the test, the edge server searches the file and downloads it for you.  
 
-### How to start the user  
+### How to Start the User  
 1.Run the edge server  
 2.Run the GUI(Maybe run two of them, one for file provider, another for file downloader.)  
 3.Enter the user ID except for space  
