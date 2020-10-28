@@ -51,7 +51,7 @@ Remember that you should choose the same type in each process 4 to 7 or you will
 You need to enter a name as a user.  
 We assumed that we had two users (user1 & user2).  
 ![image](https://i.imgur.com/Rxemtar.jpg)  
-User1 uploaded a document file.  
+User1 uploaded a document file to the cloud.  
 ![image](https://i.imgur.com/ac3FeOr.jpg)  
 We can see the file was uploaded and its' name had encrypted.  
 ![image](https://i.imgur.com/iGQKFoz.jpg)  
