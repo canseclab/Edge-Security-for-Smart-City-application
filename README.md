@@ -2,7 +2,7 @@
 
 ## Edge Server & User Side
 There are KGC, EC, and ED on the edge server, and file a.properties ,AES.java ,credentials.json , GUI.java at the user side.  
-Because we wanted to test easily, We did not separate the user from the edge.  
+Because we wanted to test easily, we did not separate the user from the edge.  
 Please refer to the folder "GUI" if you need to separate them.  
 
 ### Before Start
@@ -43,4 +43,9 @@ The NDN will send the string like this"/home/folder_name/filename" to the edge.
 After receiving the path, the edge server downloads the file if the file did not be kept in the "edgefile" folder.   
 The edge server calculates the download times and choose the keeping file.  
 
-Remember that you should choose the same type in each process 4 to 7 or you will fail.
+Remember that you should choose the same type in each process 4 to 7 or you will fail.  
+
+## Experiment  
+### First  
+![image](https://i.imgur.com/h9t3nJZ.jpg)
+
