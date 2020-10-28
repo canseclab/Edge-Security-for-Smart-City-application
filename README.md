@@ -2,9 +2,9 @@
 
 ## Edge Server & User Side
 There are KGC, EC, and ED on the edge server, and file a.properties ,AES.java ,credentials.json , GUI.java at the user side.  
-Because we wanted to test easily, we did not separate the user from the edge.  
+<!-- Because we wanted to test easily, we did not separate the user from the edge.  
 Please refer to the folder "GUI" if you need to separate them.  
-
+-->
 ### Before Start
 You should set some parameters as follow:  
 On the edge server:  
@@ -46,6 +46,18 @@ The edge server calculates the download times and choose the keeping file.
 Remember that you should choose the same type in each process 4 to 7 or you will fail.  
 
 ## Experiment  
-### First  
-![image](https://i.imgur.com/h9t3nJZ.jpg)
-
+### Beginning
+![image](https://i.imgur.com/h9t3nJZ.jpg)  
+You need to enter a name as a user.  
+We assumed that we had two users (user1 & user2).  
+![image](https://i.imgur.com/Rxemtar.jpg)  
+User1 uploaded a document file.  
+![image](https://i.imgur.com/ac3FeOr.jpg)  
+We can see the file was uploaded and its' name had encrypted.  
+![image](https://i.imgur.com/iGQKFoz.jpg)  
+User1 wanted to share the file with the user2, so user1 gave the token to user2 by a secure channel.  
+![image](https://i.imgur.com/nTWYPVM.jpg)  
+After that, user2 could download the file through the edge server.
+The edge server would ask the NDN server where the file was.
+![image](https://i.imgur.com/6UovcZh.jpg)  
+You can see the download time in the figure.
