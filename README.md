@@ -1,7 +1,7 @@
 # NDN-Project
 
 ## Edge Server & User Side
-There are KGC, EC, and ED on the edge server, and file a.properties ,AES.java ,credentials.json , GUI.java at the user side.  
+There are KGC, EC, and ED on the edge server. 
 <!-- Because we wanted to test easily, we did not separate the user from the edge.  
 Please refer to the folder "GUI" if you need to separate them.  
 -->
