@@ -1,5 +1,4 @@
-# NDN-Project Yeah
-
+# NDN-Project  
 
 ## Edge Server & User Side
 There are KGC, EC, and ED on the edge server. 
