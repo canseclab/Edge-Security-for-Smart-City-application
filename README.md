@@ -43,6 +43,45 @@ The edge server calculates the download times and choose the keeping file.
 
 Remember that you should choose the same type in each process 4 to 7 or you will fail.  
 
+## NDN Searching Side  
+NDN Searching Side is running under Ubuntu 18.04.
+Due to the file size is too large to upload, please check the code [here](https://drive.google.com/file/d/1g3wLJ_hWOI_gD4_9B_rQWp71ChVBMlg0/view?usp=sharing).  
+### Before Start
+Searching Side is based on [ndnSIM](https://ndnsim.net/current/) and [amus ndnSIM](https://github.com/ChristianKreuzberger/amus-ndnSIM).  
+Set up the system by the links above.
+Searching side also use [grive](https://github.com/vitalif/grive2) to search in the Cloud.
+Remember to bind to your target cloud.
+
+In file "\ndnSIM\ns-3\src\ndnSIM\examples\ndn-file-thread-kac.cpp",   
+line 38, make sure you setting the same port as edge user side. (Defalt port as 2323.)  
+Set your searching path in line 55, and line 136.  
+(Defalt path as: "/home/user/drive/Dropbox")
+
+### How to run NDN Searching Side
+1. In amus ndnSIM, the system uses ns-3 compliation procedure. Make configure and python binding enable with following commands, 
+```
+cd <ns-3 folder>  
+./waf configure --enable-examples
+./waf
+```
+  Due to python is not very stable for ns-3 stimulator, you can disable python with following commands, 
+```
+cd <ns-3 folder>
+./waf configure --disable-python --enable examples
+./waf
+```
+2. Execute searching side with command
+```
+cd <ns-3 folder>
+./waf --run=ndn-file-thread-kac
+```
+If the server is running, it will show "Server listening...".  
+If edge side successfully connects to NDN searching side, it will show "Connection accepted."  
+
+(Sometimes it will failed to connect with edge side and NDN searching side, please try to restart both of them.)
+As "Connection accepted." shows, you can do the experiment as the following procedure. 
+
+
 ## Experiment  
 ### Beginning
 ![image](https://i.imgur.com/h9t3nJZ.jpg)  
