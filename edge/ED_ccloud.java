@@ -101,7 +101,7 @@ public class ED_ccloud {
 					ObjectOutputStream uos = new ObjectOutputStream(user.getOutputStream());
 					ObjectInputStream uis = new ObjectInputStream(user.getInputStream());
 
-					System.out.println("Assigning new thread for this client");
+					System.out.println("Assigning new thread for this client!");
 
 					// create a new thread object
 					Thread t = new ED_ccloudThread(user, uos, uis);
