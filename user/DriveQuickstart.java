@@ -202,7 +202,7 @@ public class DriveQuickstart {
 			mediaContent = new FileContent("image/jpeg", filePath);
 		}
 		File file = service.files().create(fileMetadata, mediaContent).setFields("id").execute();
-		System.out.println("File ID: " + file.getId());
+		System.out.println("File ID:- " + file.getId());
 	}
 
 }
