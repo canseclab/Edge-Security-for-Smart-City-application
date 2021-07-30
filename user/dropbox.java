@@ -49,10 +49,10 @@ public class dropbox {
             	
             System.out.println(metadata.toStringMultiline());
         } catch (UploadErrorException ex) {
-            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
+            System.err.println("Error uploading to Dropbox:- " + ex.getMessage());
             System.exit(1);
         } catch (DbxException ex) {
-            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
+            System.err.println("Error uploading to Dropbox:- " + ex.getMessage());
             System.exit(1);
         } catch (IOException ex) {
             System.err.println("Error reading from file \"" + localFile + "\": " + ex.getMessage());
