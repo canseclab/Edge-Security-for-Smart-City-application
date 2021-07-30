@@ -113,7 +113,7 @@ public class ED_client
                     
                     
                     
-                    System.out.println("Assigning new thread for this client"); 
+                    System.out.println("Assigning new thread for this client!"); 
       
                     // create a new thread object 
                     Thread t = new ED_ClientThread(user, uos, uis); 
