@@ -72,6 +72,6 @@ public class dropbox {
             }
     }
     private static void printProgress(long uploaded, long size) {
-        System.out.printf("Uploaded %12d / %12d bytes (%5.2f%%)\n", uploaded, size, 100 * (uploaded / (double) size));
+        System.out.printf("Uploaded %12d / %12d bytes (%5.2f%%)\n...", uploaded, size, 100 * (uploaded / (double) size));
     }
 }
