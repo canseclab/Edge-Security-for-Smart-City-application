@@ -26,7 +26,7 @@ public class KGC_server
     { 
         // server is listening on port 5487
         ss = new ServerSocket(KGC_port);  
-        System.out.println("Server online");
+        System.out.println("Server online...");
         
         //Set KGC parameters
         PairingFactory.getInstance().setUsePBCWhenPossible(true);
