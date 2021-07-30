@@ -706,7 +706,7 @@ public class GUI
         G_sconfirm.fill = GridBagConstraints.NONE;
         G_sconfirm.anchor = GridBagConstraints.CENTER;
 
-        JTextField Jsname = new HintTextField("User ID");
+        JTextField Jsname = new HintTextField("User ID:");
         GridBagConstraints G_sname = new GridBagConstraints();
         G_sname.gridx = 1;
         G_sname.gridy = 0;
