@@ -51,20 +51,20 @@ public class AES
 			String IV = use.GetIV();
 			System.out.println("Enter the plaintext:");
 			String plaintext = on.nextLine();
-			String ciphertext = use.encryptAES(plaintext, key, mod, IV);			//¥[±K
-			String Decrypt_text = use.decryptAES(ciphertext, key, mod, IV);			//¸Ñ±K
-			System.out.println("----------------Encrypting----------------\n");
+			String ciphertext = use.encryptAES(plaintext, key, mod, IV);			//åŠ å¯†
+			String Decrypt_text = use.decryptAES(ciphertext, key, mod, IV);			//è§£å¯†
+			System.out.println("----------------Encrypting-----------------\n");
 			System.out.println("The Ciphertext is \"" + ciphertext + "\"\n");
-			System.out.println("----------------Decrypting----------------\n");
+			System.out.println("----------------Decrypting-----------------\n");
 			System.out.println("The Plaintext is \"" + Decrypt_text + "\"\n");
-			System.out.println("------------------------------------------");
+			System.out.println("-------------------------------------------");
 		}
 	}
 }
 
 class AES_Object
 {
-	public String GetKey(int keylength)												//¶Ã¼Æ¨ú±oKey
+	public String GetKey(int keylength)												//äº‚æ•¸å–å¾—Key
 	{
 		Random ran = new Random();
 		int length = keylength / 8;
@@ -82,9 +82,9 @@ class AES_Object
 		return key;
 	}
 	
-	public String GetIV()															//¨ú±oIV
+	public String GetIV()															//å–å¾—IV
 	{
-		Calendar now = Calendar.getInstance();		//«Ø¥ßCalendarª«¥ó ¤w¨ú±o®É¶¡
+		Calendar now = Calendar.getInstance();		//å»ºç«‹Calendarç‰©ä»¶ å·²å–å¾—æ™‚é–“
 		String IV = "";
 		IV += now.get(Calendar.YEAR);
 		IV += now.get(Calendar.MONTH);
@@ -92,16 +92,16 @@ class AES_Object
 		IV += now.get(Calendar.HOUR);
 		IV += now.get(Calendar.MINUTE);
 		IV += now.get(Calendar.SECOND);
-		IV += now.get(Calendar.MILLISECOND);		//¨ú±o¦~¥÷¡B¤ë¥÷¡B¤é´Á¡B¤p®É
-		IV += "0000";								//¤ÀÄÁ¡B¬í¡B²@¬í¡A¬°Á×§K¤£º¡16¦ì¼Æ
-		IV = IV.substring(0, 16);					//¸É¹s¦A¨ú0-16¦ì¼Æ§@¬°IV
+		IV += now.get(Calendar.MILLISECOND);		//å–å¾—å¹´ä»½ã€æœˆä»½ã€æ—¥æœŸã€å°æ™‚
+		IV += "0000";								//åˆ†é˜ã€ç§’ã€æ¯«ç§’ï¼Œç‚ºé¿å…ä¸æ»¿16ä½æ•¸
+		IV = IV.substring(0, 16);					//è£œé›¶å†å–0-16ä½æ•¸ä½œç‚ºIV
 		return IV;
 	}
 	
 	public String default_IV = "0123456789123456";
 	public String default_mode = "CBC";
 	
-	public String encryptAES(String content, String key, String mode, String IV) 	//¥[±KFunction		
+	public String encryptAES(String content, String key, String mode, String IV) 	//åŠ å¯†Function		
 		throws InvalidKeyException, NoSuchAlgorithmException, 
 		NoSuchPaddingException, UnsupportedEncodingException, 
 		InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException {
@@ -115,7 +115,7 @@ class AES_Object
 	    byte[] initParam = IV.getBytes();
 	    IvParameterSpec ivParameterSpec = new IvParameterSpec(initParam);
 			
-	    Cipher cipher = Cipher.getInstance("AES/" + mode + "/PKCS5Padding");				//¨M©wmode
+	    Cipher cipher = Cipher.getInstance("AES/" + mode + "/PKCS5Padding");				//æ±ºå®šmode
 	    cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
 		
 	    byte[] encryptedBytes = cipher.doFinal(byteContent);
@@ -124,7 +124,7 @@ class AES_Object
 	    return encoder.encodeToString(encryptedBytes);
 	}
 
-	public String decryptAES(String content, String key, String mode, String IV) 				//¸Ñ±KFunction
+	public String decryptAES(String content, String key, String mode, String IV) 				//è§£å¯†Function
 			throws InvalidKeyException, NoSuchAlgorithmException, 
 			NoSuchPaddingException, InvalidAlgorithmParameterException, 
 			IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
@@ -138,7 +138,7 @@ class AES_Object
 	    byte[] initParam = IV.getBytes();
 	    IvParameterSpec ivParameterSpec = new IvParameterSpec(initParam);
 
-	    Cipher cipher = Cipher.getInstance("AES/" + mode + "/PKCS5Padding");				//¨M©wmode
+	    Cipher cipher = Cipher.getInstance("AES/" + mode + "/PKCS5Padding");				//æ±ºå®šmode
 	    cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);
 
 	    byte[] result = cipher.doFinal(encryptedBytes);
@@ -157,7 +157,7 @@ class AES_Object
 		byte[] initParam = default_IV.getBytes();
 		IvParameterSpec ivParameterSpec = new IvParameterSpec(initParam);
 				
-		Cipher cipher = Cipher.getInstance("AES/" + default_mode + "/PKCS5Padding");				//¨M©wmode
+		Cipher cipher = Cipher.getInstance("AES/" + default_mode + "/PKCS5Padding");				//æ±ºå®šmode
 		cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
 			
 		byte[] encryptedBytes = cipher.doFinal(byteContent);
@@ -176,7 +176,7 @@ class AES_Object
 		byte[] initParam = default_IV.getBytes();
 		IvParameterSpec ivParameterSpec = new IvParameterSpec(initParam);
 
-		Cipher cipher = Cipher.getInstance("AES/" + default_mode + "/PKCS5Padding");				//¨M©wmode
+		Cipher cipher = Cipher.getInstance("AES/" + default_mode + "/PKCS5Padding");				//æ±ºå®šmode
 		cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);
 
 		byte[] result = cipher.doFinal(encryptedBytes);
