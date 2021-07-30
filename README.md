@@ -1,7 +1,7 @@
 # Edge Device NDN Cloud Searching Project  
 
 ## Edge Server & User Side
-There are KGC, EC, and ED on the edge server. 
+There are three entities, namely the KGC, EC, and ED on the edge server. 
 <!-- Because we wanted to test easily, we did not separate the user from the edge.  
 Please refer to the folder "GUI" if you need to separate them.  
 -->
